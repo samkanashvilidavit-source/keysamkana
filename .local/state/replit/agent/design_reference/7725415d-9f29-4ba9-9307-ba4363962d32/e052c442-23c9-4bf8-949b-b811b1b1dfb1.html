@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoKey Tbilisi - Professional Automotive Locksmith Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'primary': '#1E40AF',
+                    'secondary': '#F59E0B',
+                    'accent': '#10B981',
+                    'emergency': '#EF4444'
+                },
+                fontFamily: {
+                    'inter': ['Inter', 'sans-serif']
+                },
+                animation: {
+                    'fadeInUp': 'fadeInUp 0.6s ease-out',
+                    'slideInLeft': 'slideInLeft 0.8s ease-out',
+                    'slideInRight': 'slideInRight 0.8s ease-out',
+                    'bounce-slow': 'bounce 2s infinite',
+                    'pulse-slow': 'pulse 3s infinite'
+                }
+            }
+        }
+    };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .floating-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+        }
+
+        .price-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .price-card:hover::before {
+            left: 100%;
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- @COMPONENT: Header -->
+    <header class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-primary text-white p-2 rounded-lg">
+                        <i class="fas fa-key text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">AutoKey Tbilisi</h1>
+                        <p class="text-xs text-gray-600">Professional Locksmith</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <nav class="flex space-x-6">
+                        <a href="#services" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                        <a href="#pricing" class="text-gray-700 hover:text-primary transition-colors">Pricing</a>
+                        <a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                        <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+                    </nav>
+                    <a href="tel:+995555123456" class="bg-emergency text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors">
+                        <i class="fas fa-phone mr-2"></i>Emergency
+                    </a>
+                </div>
+
+                <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4">
+                <nav class="flex flex-col space-y-3">
+                    <a href="#services" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-primary transition-colors">Pricing</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+                    <a href="tel:+995555123456" class="bg-emergency text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors text-center">
+                        <i class="fas fa-phone mr-2"></i>Emergency Call
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background with Tbilisi cityscape -->
+        <!-- A panoramic view of Tbilisi skyline with modern buildings and historic architecture -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600298881974-6be191ceeda1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080" alt="Tbilisi cityscape" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-blue-800/75"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white animate-slideInLeft">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        Professional <span class="text-secondary">Automotive</span> Locksmith in Tbilisi
+                    </h1>
+                    <p class="text-xl mb-8 text-blue-100">
+                        Lost car keys? Locked out? We're Tbilisi's #1 automotive locksmith service with 24/7 emergency response and mobile key cutting.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <a href="tel:+995555123456" class="bg-emergency hover:bg-red-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105 text-center">
+                            <i class="fas fa-phone mr-2"></i>Call Now: +995 555 123 456
+                        </a>
+                        <button onclick="showPricingCalculator()" class="bg-secondary hover:bg-yellow-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105">
+                            <i class="fas fa-calculator mr-2"></i>Get Price Quote
+                        </button>
+                    </div>
+
+                    <div class="flex items-center space-x-6 text-blue-100">
+                        <div class="flex items-center">
+                            <i class="fas fa-clock mr-2 text-secondary"></i>
+                            <span>24/7 Service</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-car mr-2 text-secondary"></i>
+                            <span>Mobile Service</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt mr-2 text-secondary"></i>
+                            <span>Licensed & Insured</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-slideInRight">
+                    <!-- Mobile locksmith van working on car -->
+                    <img src="https://pixabay.com/get/gf3f2c2a2f4056695f80cac95e9d7aa4dfa8bd70335a9ffea6066f878b425850466c18a9177328a73e0c2685c7cb9d233a081d56536e5855586a132a95302311e_1280.jpg" alt="Mobile locksmith van" class="rounded-2xl shadow-2xl floating-animation" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce-slow">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Automotive Locksmith Services</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Comprehensive car key and lock solutions for all vehicle types in Tbilisi and surrounding areas</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 animate-on-scroll">
+                    <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-key text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Car Key Replacement</h3>
+                    <p class="text-gray-600 mb-6">Lost your car keys? We create new keys on-site for all vehicle makes and models, including transponder and smart keys.</p>
+                    <div class="text-secondary font-semibold mb-4">Starting from 80₾</div>
+                    <button onclick="showServiceDetails('key-replacement')" class="text-primary hover:text-blue-800 font-semibold transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 animate-on-scroll">
+                    <div class="bg-secondary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-copy text-2xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Key Duplication</h3>
+                    <p class="text-gray-600 mb-6">Need spare keys? We provide quick and accurate key copying services for traditional and modern car keys.</p>
+                    <div class="text-secondary font-semibold mb-4">Starting from 35₾</div>
+                    <button onclick="showServiceDetails('key-duplication')" class="text-primary hover:text-blue-800 font-semibold transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 animate-on-scroll">
+                    <div class="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-microchip text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Transponder Programming</h3>
+                    <p class="text-gray-600 mb-6">Advanced transponder key programming and chip key services for modern vehicles with electronic security systems.</p>
+                    <div class="text-secondary font-semibold mb-4">Starting from 120₾</div>
+                    <button onclick="showServiceDetails('transponder')" class="text-primary hover:text-blue-800 font-semibold transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 animate-on-scroll">
+                    <div class="bg-emergency/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-car text-2xl text-emergency"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Car Lockout Service</h3>
+                    <p class="text-gray-600 mb-6">Locked out of your car? Our emergency lockout service gets you back in quickly without damaging your vehicle.</p>
+                    <div class="text-secondary font-semibold mb-4">Starting from 60₾</div>
+                    <button onclick="showServiceDetails('lockout')" class="text-primary hover:text-blue-800 font-semibold transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 animate-on-scroll">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Ignition Repair</h3>
+                    <p class="text-gray-600 mb-6">Ignition problems? We diagnose and repair faulty ignition systems and provide ignition key replacement services.</p>
+                    <div class="text-secondary font-semibold mb-4">Starting from 150₾</div>
+                    <button onclick="showServiceDetails('ignition')" class="text-primary hover:text-blue-800 font-semibold transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100 animate-on-scroll">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Key Fob Programming</h3>
+                    <p class="text-gray-600 mb-6">Remote key fob not working? We program and replace key fobs for all major car manufacturers and models.</p>
+                    <div class="text-secondary font-semibold mb-4">Starting from 90₾</div>
+                    <button onclick="showServiceDetails('keyfob')" class="text-primary hover:text-blue-800 font-semibold transition-colors">
+                        Learn More <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Services Section -->
+
+    <!-- @COMPONENT: Pricing Calculator -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Transparent Pricing</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">No hidden fees. Get an instant quote for your automotive locksmith needs.</p>
+            </div>
+
+            <!-- Interactive Pricing Calculator -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-4xl mx-auto animate-on-scroll">
+                <div class="gradient-bg text-white p-8">
+                    <h3 class="text-2xl font-bold mb-2">Quick Price Calculator</h3>
+                    <p>Select your service to get an instant estimate</p>
+                </div>
+
+                <div class="p-8">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-3">Service Type</label>
+                            <select id="serviceType" onchange="calculatePrice()" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option value="">Select a service...</option>
+                                <option value="key-replacement">Car Key Replacement</option>
+                                <option value="key-duplication">Key Duplication</option>
+                                <option value="transponder">Transponder Programming</option>
+                                <option value="lockout">Car Lockout Service</option>
+                                <option value="ignition">Ignition Repair</option>
+                                <option value="keyfob">Key Fob Programming</option>
+                            </select>
+
+                            <label class="block text-gray-700 font-semibold mb-3 mt-6">Vehicle Type</label>
+                            <select id="vehicleType" onchange="calculatePrice()" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option value="standard">Standard Vehicle</option>
+                                <option value="luxury">Luxury Vehicle</option>
+                                <option value="european">European Import</option>
+                                <option value="motorcycle">Motorcycle</option>
+                            </select>
+
+                            <label class="block text-gray-700 font-semibold mb-3 mt-6">Time of Service</label>
+                            <select id="timeType" onchange="calculatePrice()" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option value="regular">Regular Hours (8AM-6PM)</option>
+                                <option value="evening">Evening (6PM-10PM)</option>
+                                <option value="emergency">Emergency (10PM-8AM)</option>
+                            </select>
+                        </div>
+
+                        <div class="bg-gray-50 p-6 rounded-xl">
+                            <h4 class="text-lg font-bold text-gray-900 mb-4">Price Estimate</h4>
+                            <div id="priceResult" class="text-3xl font-bold text-primary mb-2">Select service</div>
+                            <div id="priceDetails" class="text-gray-600 text-sm mb-6">Choose your service type to see pricing</div>
+                            
+                            <div class="space-y-3 text-sm text-gray-600">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-accent mr-2"></i>
+                                    <span>No hidden fees</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-accent mr-2"></i>
+                                    <span>Free on-site quotes</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-accent mr-2"></i>
+                                    <span>Same-day service</span>
+                                </div>
+                            </div>
+
+                            <button onclick="bookService()" class="w-full bg-primary hover:bg-blue-800 text-white py-3 px-6 rounded-lg font-semibold transition-all mt-6">
+                                Book This Service
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price Range Cards -->
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <div class="price-card bg-white p-8 rounded-2xl shadow-lg animate-on-scroll">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Basic Services</h3>
+                        <div class="text-3xl font-bold text-primary mb-2">35₾ - 80₾</div>
+                        <div class="text-gray-600 mb-6">Standard key services</div>
+                        <ul class="text-left space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-accent mr-2"></i>Key duplication</li>
+                            <li><i class="fas fa-check text-accent mr-2"></i>Simple lockouts</li>
+                            <li><i class="fas fa-check text-accent mr-2"></i>Basic key cutting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="price-card bg-primary text-white p-8 rounded-2xl shadow-lg transform scale-105 animate-on-scroll">
+                    <div class="text-center">
+                        <div class="bg-secondary text-primary px-3 py-1 rounded-full text-sm font-semibold mb-4 inline-block">Most Popular</div>
+                        <h3 class="text-xl font-bold mb-4">Advanced Services</h3>
+                        <div class="text-3xl font-bold mb-2">90₾ - 150₾</div>
+                        <div class="text-blue-100 mb-6">Electronic key services</div>
+                        <ul class="text-left space-y-2 text-blue-100">
+                            <li><i class="fas fa-check text-secondary mr-2"></i>Transponder programming</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i>Key fob replacement</li>
+                            <li><i class="fas fa-check text-secondary mr-2"></i>Ignition services</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="price-card bg-white p-8 rounded-2xl shadow-lg animate-on-scroll">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Premium Services</h3>
+                        <div class="text-3xl font-bold text-primary mb-2">160₾ - 300₾</div>
+                        <div class="text-gray-600 mb-6">Luxury & complex systems</div>
+                        <ul class="text-left space-y-2 text-gray-600">
+                            <li><i class="fas fa-check text-accent mr-2"></i>Luxury vehicle keys</li>
+                            <li><i class="fas fa-check text-accent mr-2"></i>Smart key programming</li>
+                            <li><i class="fas fa-check text-accent mr-2"></i>Complex ignition repair</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Pricing Calculator -->
+
+    <!-- @COMPONENT: About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-on-scroll">
+                    <!-- Professional locksmith working on car key -->
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Professional locksmith cutting car keys" class="rounded-2xl shadow-xl" />
+                </div>
+
+                <div class="animate-on-scroll">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Why Choose AutoKey Tbilisi?</h2>
+                    <p class="text-xl text-gray-600 mb-8">We're Tbilisi's most trusted automotive locksmith service, combining years of experience with cutting-edge technology to solve your car key problems quickly and reliably.</p>
+
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-2">5+</div>
+                            <div class="text-gray-600">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-2">2000+</div>
+                            <div class="text-gray-600">Happy Customers</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-2">24/7</div>
+                            <div class="text-gray-600">Emergency Service</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-2">15min</div>
+                            <div class="text-gray-600">Average Response</div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-accent/10 p-2 rounded-lg">
+                                <i class="fas fa-shield-alt text-accent"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Licensed & Insured</h4>
+                                <p class="text-gray-600">Fully licensed locksmith service with comprehensive insurance coverage.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-secondary/10 p-2 rounded-lg">
+                                <i class="fas fa-tools text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Professional Equipment</h4>
+                                <p class="text-gray-600">State-of-the-art key cutting and programming equipment in every van.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-primary/10 p-2 rounded-lg">
+                                <i class="fas fa-handshake text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Satisfaction Guarantee</h4>
+                                <p class="text-gray-600">100% satisfaction guarantee on all our automotive locksmith services.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl font-bold mb-4">Need Emergency Locksmith Service?</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">Available 24/7 across Tbilisi and surrounding areas. Fast response, professional service, fair pricing.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Emergency Contact -->
+                <div class="bg-emergency p-8 rounded-2xl text-center animate-on-scroll">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-2xl text-emergency"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Emergency Hotline</h3>
+                    <a href="tel:+995555123456" class="text-2xl font-bold hover:text-red-200 transition-colors">+995 555 123 456</a>
+                    <p class="mt-2 text-red-100">24/7 Emergency Service</p>
+                </div>
+
+                <!-- Regular Contact -->
+                <div class="bg-primary p-8 rounded-2xl text-center animate-on-scroll">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone-alt text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Regular Service</h3>
+                    <a href="tel:+995555654321" class="text-2xl font-bold hover:text-blue-200 transition-colors">+995 555 654 321</a>
+                    <p class="mt-2 text-blue-100">Mon-Sun 8AM-10PM</p>
+                </div>
+
+                <!-- WhatsApp Contact -->
+                <div class="bg-accent p-8 rounded-2xl text-center animate-on-scroll">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-whatsapp text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">WhatsApp</h3>
+                    <a href="https://wa.me/995555123456" class="text-2xl font-bold hover:text-green-200 transition-colors">+995 555 123 456</a>
+                    <p class="mt-2 text-green-100">Quick Quote & Booking</p>
+                </div>
+            </div>
+
+            <!-- Service Areas -->
+            <div class="mt-16 text-center animate-on-scroll">
+                <h3 class="text-2xl font-bold mb-8">Service Areas in Tbilisi</h3>
+                <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-4 text-gray-300">
+                    <div>Vake</div>
+                    <div>Saburtalo</div>
+                    <div>Didube</div>
+                    <div>Chugureti</div>
+                    <div>Mtatsminda</div>
+                    <div>Isani</div>
+                    <div>Samgori</div>
+                    <div>Gldani</div>
+                    <div>Nadzaladevi</div>
+                    <div>Old Tbilisi</div>
+                    <div>Krtsanisi</div>
+                    <div>Digomi</div>
+                </div>
+                <p class="mt-6 text-gray-400">And surrounding areas within 30km of Tbilisi city center</p>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-12 animate-on-scroll">
+                <a href="tel:+995555123456" class="bg-secondary hover:bg-yellow-600 text-gray-900 px-12 py-4 rounded-xl text-xl font-bold transition-all transform hover:scale-105 inline-block">
+                    <i class="fas fa-phone mr-3"></i>Call Now for Immediate Service
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="bg-primary text-white p-2 rounded-lg">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">AutoKey Tbilisi</h3>
+                            <p class="text-sm">Professional Locksmith</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400">Tbilisi's trusted automotive locksmith service since 2019. Professional, reliable, and available 24/7.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-primary transition-colors">Car Key Replacement</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Key Duplication</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Transponder Programming</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Emergency Lockout</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><i class="fas fa-phone mr-2 text-primary"></i>+995 555 123 456</li>
+                        <li><i class="fas fa-envelope mr-2 text-primary"></i>info@autekeytbilisi.ge</li>
+                        <li><i class="fas fa-map-marker-alt mr-2 text-primary"></i>Tbilisi, Georgia</li>
+                        <li><i class="fas fa-clock mr-2 text-primary"></i>24/7 Emergency Service</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fab fa-google text-xl"></i>
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-sm text-gray-400">Licensed & Insured</p>
+                        <p class="text-sm text-gray-400">License #LKS-2019-001</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 AutoKey Tbilisi. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/995555123456" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition-all transform hover:scale-110">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        // TODO: Implement business logic, API calls, or state management
+        
+        (function() {
+            // Mobile menu toggle
+            window.toggleMobileMenu = function() {
+                const menu = document.getElementById('mobileMenu');
+                menu.classList.toggle('hidden');
+            }
+
+            // Animate elements on scroll
+            const observeElements = function() {
+                const elements = document.querySelectorAll('.animate-on-scroll');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+
+                elements.forEach(el => observer.observe(el));
+            };
+
+            // Price calculator
+            window.calculatePrice = function() {
+                const serviceType = document.getElementById('serviceType').value;
+                const vehicleType = document.getElementById('vehicleType').value;
+                const timeType = document.getElementById('timeType').value;
+                const resultDiv = document.getElementById('priceResult');
+                const detailsDiv = document.getElementById('priceDetails');
+
+                if (!serviceType) {
+                    resultDiv.textContent = 'Select service';
+                    detailsDiv.textContent = 'Choose your service type to see pricing';
+                    return;
+                }
+
+                const basePrices = {
+                    'key-replacement': 80,
+                    'key-duplication': 35,
+                    'transponder': 120,
+                    'lockout': 60,
+                    'ignition': 150,
+                    'keyfob': 90
+                };
+
+                const vehicleMultipliers = {
+                    'standard': 1,
+                    'luxury': 1.5,
+                    'european': 1.3,
+                    'motorcycle': 0.8
+                };
+
+                const timeMultipliers = {
+                    'regular': 1,
+                    'evening': 1.2,
+                    'emergency': 1.5
+                };
+
+                const basePrice = basePrices[serviceType];
+                const finalPrice = Math.round(basePrice * vehicleMultipliers[vehicleType] * timeMultipliers[timeType]);
+
+                resultDiv.textContent = `${finalPrice}₾`;
+                detailsDiv.textContent = `Base price: ${basePrice}₾ | Vehicle type & timing adjustments applied`;
+            };
+
+            // Service details modal (placeholder)
+            window.showServiceDetails = function(service) {
+                alert(`Service details for ${service} - This would show a detailed modal in the full implementation.`);
+            };
+
+            // Book service action
+            window.bookService = function() {
+                const phone = '+995555123456';
+                window.location.href = `tel:${phone}`;
+            };
+
+            // Pricing calculator modal
+            window.showPricingCalculator = function() {
+                document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+            };
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Initialize animations when page loads
+            document.addEventListener('DOMContentLoaded', function() {
+                observeElements();
+            });
+        })();
+    </script>
+</body>
+</html>

@@ -35,7 +35,7 @@ export default function HeroSection() {
               <Button 
                 asChild 
                 size="lg" 
-                className="bg-[hsl(var(--emergency))] hover:bg-red-600 text-white text-lg"
+                className="bg-red-600 hover:bg-red-700 text-white text-lg border-0"
               >
                 <a href="tel:+995555123456">
                   <Phone className="w-5 h-5 mr-2" />

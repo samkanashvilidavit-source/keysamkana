@@ -91,10 +91,10 @@ export default function ContactSection() {
 
         {/* Emergency Contact Cards */}
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
-          <Card className="bg-[hsl(var(--emergency))] text-white animate-on-scroll">
+          <Card className="bg-red-600 text-white animate-on-scroll">
             <CardContent className="p-8 text-center">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-8 h-8 text-[hsl(var(--emergency))]" />
+                <Phone className="w-8 h-8 text-red-600" />
               </div>
               <h3 className="text-xl font-bold mb-4">Emergency Hotline</h3>
               <Button asChild variant="ghost" className="text-2xl font-bold hover:text-red-200 p-0 h-auto">

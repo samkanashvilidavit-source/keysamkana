@@ -56,7 +56,7 @@ export default function Header() {
             </nav>
             <Button 
               asChild 
-              className="bg-[hsl(var(--emergency))] hover:bg-red-600 text-white"
+              className="bg-red-600 hover:bg-red-700 text-white border-0"
             >
               <a href="tel:+995555123456">
                 <Phone className="w-4 h-4 mr-2" />
@@ -105,7 +105,7 @@ export default function Header() {
               </button>
               <Button 
                 asChild 
-                className="bg-[hsl(var(--emergency))] hover:bg-red-600 text-white w-full"
+                className="bg-red-600 hover:bg-red-700 text-white w-full border-0"
               >
                 <a href="tel:+995555123456">
                   <Phone className="w-4 h-4 mr-2" />
